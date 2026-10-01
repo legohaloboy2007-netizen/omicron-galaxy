@@ -1,3 +1,219 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Omicron Galaxy homepage hero
+.omicron-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin: 2rem 0 2.5rem;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(141, 169, 214, 0.22);
+  box-shadow:
+    0 0 30px rgba(90, 125, 180, 0.12),
+    0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.omicron-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.omicron-hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 8, 14, 0.92) 0%,
+    rgba(5, 8, 14, 0.72) 38%,
+    rgba(5, 8, 14, 0.18) 70%,
+    rgba(5, 8, 14, 0.05) 100%
+  );
+}
+
+.omicron-hero-content {
+  position: absolute;
+  z-index: 2;
+  left: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55%;
+}
+
+.omicron-hero-kicker {
+  margin-bottom: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #8da9d6;
+}
+
+.omicron-hero-title {
+  margin-bottom: 0.65rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #f0f2f7;
+}
+
+.omicron-hero-tagline {
+  max-width: 34rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #c7ccd6;
+}
+
+.omicron-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.omicron-hero-actions a {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(141, 169, 214, 0.5);
+  border-radius: 6px;
+  background: rgba(11, 13, 18, 0.72);
+  color: #c7d7ef;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.omicron-hero-actions a:hover {
+  background: rgba(141, 169, 214, 0.16);
+  border-color: #8da9d6;
+  transform: translateY(-1px);
+}
+
+// Omicron Galaxy database navigation
+.omicron-nav {
+  margin: 3rem 0;
+}
+
+.omicron-nav-header {
+  margin-bottom: 1.4rem;
+}
+
+.omicron-nav-kicker {
+  margin-bottom: 0.35rem;
+  color: #8da9d6;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.omicron-nav-title {
+  margin-bottom: 0.4rem;
+  color: #f0f2f7;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.omicron-nav-description {
+  max-width: 38rem;
+  color: #aeb5c2;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.omicron-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.omicron-nav-card {
+  position: relative;
+  display: flex;
+  min-height: 125px;
+  flex-direction: column;
+  padding: 1.15rem;
+  overflow: hidden;
+
+  border: 1px solid rgba(141, 169, 214, 0.18);
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(141, 169, 214, 0.07),
+      rgba(161, 139, 199, 0.025)
+    ),
+    rgba(11, 13, 18, 0.65);
+
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.omicron-nav-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(141, 169, 214, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(141, 169, 214, 0.13),
+      rgba(161, 139, 199, 0.05)
+    ),
+    rgba(11, 13, 18, 0.8);
+}
+
+.omicron-nav-number {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+
+  color: rgba(141, 169, 214, 0.28);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.omicron-nav-card-title {
+  margin-bottom: 0.55rem;
+
+  color: #b8cae7;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.omicron-nav-card-text {
+  max-width: 90%;
+  color: #9da5b3;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .omicron-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .omicron-hero-content {
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+
+  .omicron-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .omicron-hero-tagline {
+    font-size: 0.85rem;
+  }
+}

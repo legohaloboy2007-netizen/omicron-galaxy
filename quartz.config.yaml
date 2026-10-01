@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: omicrongalaxy.wiki
+  baseUrl: legohaloboy2007-netizen.github.io/omicron-galaxy
   ignorePatterns:
     - private
     - templates
